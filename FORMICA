@@ -1,0 +1,73 @@
+package formicchek;
+import java.util.Random;
+
+class FORMICA {
+	private String NOME;
+	private int X;
+	private int Y;
+	private int ENERGIA;
+	private boolean VIVA;
+
+    public FORMICA(String nome, int x, int y, int energia) {
+        this.NOME = nome;
+        this.X = 0;
+        this.Y = 0;
+        this.ENERGIA = 10;
+        this.VIVA = true;
+    }
+
+    public void muovi() {
+        if (VIVA) {
+            Random rand = new Random();
+            int direzione = rand.nextInt(4);
+            
+            switch (direzione) {
+                case 0:
+                    Y++;
+                    break;
+                case 1:
+                    Y--;
+                    break;
+                case 2:
+                    X++;
+                    break;
+                case 3:
+                    X--;
+                    break;
+            }
+
+            ENERGIA--;
+            if (ENERGIA <= 0) {
+                VIVA = false;
+                System.out.println(NOME + "è morta!");
+            }
+            
+            Random rand2 = new Random();
+            int mangia = rand2.nextInt(5);
+            if(mangia==0) {
+            	ENERGIA++;
+            }
+        }
+        System.out.print(NOME + "ha fatto un passo. Gli rimane questa energia: " + ENERGIA + "   ");  //Per avere un output più pulito si potrebbe togliere questa riga di comando
+    }
+
+    public void mangia(int Energia) {
+        this.ENERGIA += Energia;
+    }
+    
+    public String nome() {
+	return NOME;
+    }
+    public int y() {
+	return Y;
+    }
+    public int x() {
+	return X;
+    }
+    public int energia() {
+	return ENERGIA;
+    }
+    public boolean viva() {
+	return VIVA;
+    }
+}
