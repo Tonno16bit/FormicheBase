@@ -1,0 +1,43 @@
+package formicchek;
+public class GARAFORMICHE {
+
+public static void main(String[] args) {
+        FORMICA formica1 = new FORMICA("Luca", 0, 0, 10);
+        FORMICA formica2 = new FORMICA("Antonio", 0, 0, 10);
+        FORMICA formica3 = new FORMICA("Kledi", 0, 0, 10);
+        int traguardoX = 3;
+        int traguardoY = 3;
+        
+        while (formica1.viva() || formica2.viva() || formica3.viva()) {
+            formica1.muovi();
+            formica2.muovi();
+            formica3.muovi();
+            System.out.println();
+        }
+        
+        System.out.println();
+        System.out.println("Posizione finale delle formiche");
+        System.out.println(formica1.nome() + "=" + "x:" + formica1.x() + "y:" + formica1.y());
+        System.out.println(formica2.nome() + "=" + "x:" + formica2.x() + "y:" + formica2.y());
+        System.out.println(formica3.nome() + "=" + "x:" + formica3.x() + "y:" + formica3.y());
+        System.out.println();
+        
+        
+        if (formica1.x() == traguardoX && formica1.y() == traguardoY) {
+            System.out.println(formica1.nome() + " ha raggiunto il traguardo!");
+        }
+           if (formica2.x() == traguardoX && formica2.y() == traguardoY) {
+            System.out.println(formica1.nome() + " ha raggiunto il traguardo!");
+        }
+           if (formica3.x() == traguardoX && formica3.y() == traguardoY) {
+            System.out.println(formica1.nome() + " ha raggiunto il traguardo!");
+        }
+           if(!((formica1.x() == traguardoX && formica1.y() == traguardoY)||(formica2.x() == traguardoX && formica2.y() == traguardoY)||(formica3.x() == traguardoX && formica3.y() == traguardoY))) {
+         	System.out.println("nessuna formica ha vinto");
+        }
+
+        System.out.println("Codice di Antonio Obaid, chiunque può usufruirne liberamente.");
+        System.out.println("mi raccomando cambiate un po' il codice che il volta vi becca LOL");
+	
+	}
+}
