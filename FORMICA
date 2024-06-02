@@ -48,7 +48,7 @@ class FORMICA {
             	ENERGIA++;
             }
         }
-        System.out.print(NOME + "ha fatto un passo. Gli rimane questa energia: " + ENERGIA + "   ");  //Per avere un output più pulito si potrebbe togliere questa riga di comando
+       
     }
 
     public void mangia(int Energia) {
